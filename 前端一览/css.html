@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 内嵌式css -->
+    <style>
+        .pp {
+            width: 300px;
+            height: 300px;
+            background: gold;
+            border: black solid 5px;
+            text-align: center;
+            overflow: anto;
+        }
+        .abc {
+            font-weight:bold;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            border: green solid 5px;
+            color: white;
+            line-height: 100px;
+            font-family: 'kaiti';
+            text-align: center;
+            float: left;
+        }
+    </style>
+
+    <!-- 外链式css 样式
+    <link rel="stylesheet" href="style.css"> -->
+
+</head>
+<body>
+
+    <!-- 行内式css -->
+    <div class="pp">
+        <div class="abc">有点东西呀</div>
+        <p class="box" style="background:grey;">这是一个css测试器</p>
+    </div>
+</body>
+</html>
+
+<!-- 
+    css (Cascading Style Sheet)
+    
+    层叠样式表，用来美化页面的一种语言. css 由有选择器和样式规则这两个主要部分组成，语法格式 选择器{样式规则1;样式规则2...}
+    1.美化界面（比如设置标签大小、颜色、字体加粗等样式） 
+    2.控制页面布局（比如设置浮动、定位等样式）
+
+    css 有三种引入方式
+    
+    1.行内式（几乎不用）            
+     直接在标签的 style 属性中添加css样式
+    优: 方便、直观    缺: 但重用性差，只能单个标签使用
+    
+    2.内嵌式、内部样式（学习使用，或者不需重用的场景使用）
+     在 <head> 标签内加入 <style> 标签，然后在其中编写css代码
+    优: 在同一个页面内便于复用和维护    缺: 但在多个页面之间的重用性不够高，只在单个文件中作用
+
+    3.外链式
+     将css代码写在一个单独的文件中，在 <head> 标签中使用 <link> 标签直接引入该文件到页面中
+    优: css样式与html页面分离，便于整个html页面系统的规划和维护，可重用性高     
+    缺: 容易出现css代码过于集中，可阅读性差，维护不当容易造成混乱
+ -->
+
+ <!-- 
+    css选择器的种类
+    1. 标签选择器
+        根据标签名来选择标签，影响范围大，一般用来做一些通用设置
+    2. 类选择器
+        根据类名(class)来选择标签，格式为 (.类名) ，一个类选择器可以应用多个标签，一个标签也可以应用多个类选择器(使用空格分割)
+        因其应用灵活，是css应用最多的一种选择器
+    3. 层级选择器（后代选择器）
+        根据层级关系选择后代标签，祖先在前面后代在后面标签从左往右用空格隔开，主要应用在标签嵌套结构中，减少命名
+    4. id选择器
+        根据id选择标签，格式 (#类名) ，元素的id名称不能重复，所以id选择器只能对应一个页面上一个元素，不能复用
+        id名一般给程序使用，js通过id只能获取唯一的标签对象，所以不推荐使用id作为选择器
+    5. 组选择器
+        根据组合的选择器给多个不同的标签设置同样参数，选择器之间用','逗号隔开，公共共用的样式设置可以使用组选择器
+    6. 伪类选择器
+        用于向选择器添加特殊效果，以':'隔开，当用户和网站交互时，改变显示效果可使用伪类选择器
+    
+    -----------------------------------------------------------------------------------------------------------
+
+    样式属性
+    ------------------
+    1. 布局常用样式属性
+    width 设置元素(标签)的宽度，如: width:100px;
+    height 设置元素(标签)的gao高度，如: height:200px;
+    backbound 设置元素背景色或者背景图片，如: brackbound:gold;(设置元素的背景色)  brackbound:url(images/logo.png);(设置元素的背景图片)
+    border 设置元素四周边框，如: border:1px solid black;(1像素宽的黑色实线的四周边框)
+        也可以分别设置四条边，如下:
+        border-top      顶边边框
+        border-left     左边边框
+        border-right    右边边框
+        border-bottom   底边边框
+    padding 设置元素包含内容和元素边框的距离(四边)，即内边距，如padding:20px;单边设置与border同
+    margin 设置元素和外界的距离(四边)，即外边距，如margin:20px;单边设置与border同
+    float 设置元素浮动，浮动可以让块元素排列在一行，浮动分为 左浮动(float:left;) 和 右浮动(float:right;)
+
+    2. 文本常用样式属性
+    color 设置文字的颜色
+    font-size 设置文字大小，如:12px;
+    font-family 设置文字字体，为避免中文汉字不兼容，一般写英文或首字母大写拼音,如: 'Microsoft Yahei';
+    font-weight 设置文字是否加粗，bold 是加粗，normal 是不加粗
+    line-height 设置文字行高，如: line-height:24px;表示文字高度加上文字上下的间距是24px(每行占有的高度)
+    text-decoration 设置文字的下划线，如: none;将文字下划线去掉
+        underline下划线; line-through中划线; overline上划线;
+    text-align 设置文字水平对齐方式，如: center;设置文字水平居中
+    text-indent 设置文字首行缩进，如: 24px;设置文字首行缩进为24px
+
+    css 元素溢出
+    当子元素(子标签)尺寸超出父元素(父标签)时，通过在父元素选择器中设置 overflow 属性来确定溢出部分显示方式
+    overflow属性可选择项:
+        1. visible 默认值，显示溢出部分
+        2. hidden 隐藏溢出部分
+        3. auto 滚动显示溢出的其余部分
+
+    display 属性，用来设置元素的类型及隐藏，常用的属性值有:
+        none 元素隐藏且不占位置
+        inline 元素以行内元素显示（可以跟其他标签同一行显示）
+        block 元素以块元素显示（与div一样，独占一行）
+    
+    盒子模型
+    就是把html页面的元素看成一个矩形盒子，矩形盒子由内容(content)、内边距(padding)、边框(border)、外边距(margin)四部分组成
+        内容大小参数:       width,height(内容宽度、高度)
+        内边距大小参数:     padding
+        边框大小参数:       border
+        外边距大小参数:     margin
+
+  -->

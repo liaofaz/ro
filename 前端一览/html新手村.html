@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- 列表标签 -->
+    <!-- 列表标签分为 无序列表标签（ul标签）和 有序列表标签（ol标签） -->
+    <!-- 强调显示顺序使用有序标签，不强调顺序使用无序标签 -->
+    
+    <!-- 无序列表标签 -->
+    <ul>
+        <li>苹果</li>
+        <li>小米</li>
+        <li>华为</li>
+    </ul>
+
+    <!-- 有序列表标签 -->
+    <ol>
+        <li>第一步</li>
+        <li>第二步</li>
+        <li>第三步</li>
+    </ol>
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- 表格标签 -->
+    <table border="1px">     
+        <tr>                        <!-- tr表示行标签 -->
+            <th>姓名</th>            <!-- th 表示表头标签 -->
+            <th>年龄</th>
+            <th>城市</th>
+            <th>学历</th>
+        </tr>
+        <tr>
+            <td>王骁</td>           <!-- td 表示行标签 -->
+            <td>28</td>
+            <td>海南</td>
+            <td>硕士</td>
+        </tr>
+    </table>
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- 表单标签 -->
+    <!-- 
+        什么是表单？表单用于搜集不同类型的用户输入数据内容，然后把数据提交到web服务器
+
+        表单的标签:
+        1.<form> 表示表单标签，定义整体的表单区域
+            action 属性，设置表单数据提交地址
+            method 属性，设置表单提交方式，一般有"GET"和"POST"两种方式，不区分大小写
+        
+        2.<label> 表示表单元素标签中的文字标注标签，定义文字标注
+        3.<input> 表示表单元素标签中的用户输入标签，定义不同类型的用户输入数据方式
+            # type属性
+            type='text'     定义单行文本输入框
+            type='password' 定义密码输入框
+            type='radio'    定义单选框
+            type='checkbox' 定义复选框
+            type='file'     定义上传文件
+            type='submit'   定义提交按钮
+            type='reset'    定义重置按钮
+            type='button'   定义一个普通按钮
+
+        4.<textarea> 表示表单元素标签中的多行文本输入框标签，定义多行文本输入框
+        5.<select> 表示表单元素标签中的下拉列表标签，定义下拉列表
+            <option> select标签的同事标签，定义下拉列表的选项
+        ----------------------------------------------------------------------
+        表单元素属性
+        name 属性 设置表单元素的名称，该名称是提交数据时的参数名
+        value 属性 设置表单元素的值，该值是提交数据是参数m名对应的值
+     -->
+     <br>
+     <form action="http://www.baidu.com" method="GET">
+         <p>
+            <label for="name">姓名:</label>
+            <input type="text" name="name" id="name">
+        </p>
+         <p>
+            <label for="password">密码:</label>
+            <input type="password" name="password" id="password">
+        </p>
+        <p>
+            <label>性别</label>
+            <input type="radio" name="gender" id="gender" value="man">男
+            <input type="radio" name="gender" id="gender" value="women">女
+        </p>
+        <p>
+            <label for="position">籍贯</label>
+            <select name="position" id="position">
+                <option value="bj">北京</option>
+                <option value="sz">深圳</option>
+                <option value="sh">上海</option>
+                <option value="gz">广州</option>
+                <option value="cd">成都</option>
+            </select>
+        </p>
+        <p>
+            <label>爱好</label>
+            <input type="checkbox" name="爱好" id="hobby" value="sing">唱歌
+            <input type="checkbox" name="爱好" id="hobby" value="game">游戏
+            <input type="checkbox" name="爱好" id="hobby" value="run">马拉松
+            <input type="checkbox" name="爱好" id="hobby" value="study">学习
+        </p>
+        <p>
+            <label for="picture">照片</label>
+            <input type="file" name="picture" id="picture">
+        </p>
+        <p>
+            <label for="yourself">个人说明</label>
+            <br>
+            <textarea name="self" id="" cols="30" rows="3"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+        </p>
+     </form>
+</body>
+</html>

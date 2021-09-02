@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .button {
+            background: blue;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // alert("我是内嵌式的js代码") ;
+
+        
+        // 有参数有返回值的函数
+        // function fnSum(iNum1,iNum2){
+        //     return iNum1 + iNum2;
+        //     alert("return之后的代码不会被执行");
+        // }
+        // alert('求得的和为:' + fnSum(2,6));
+
+
+        // 修改局部变量为全局变量
+        // var iNum = 555;
+        // function fnModify(){
+        //     alert(iNum);
+        //     iNum = 2333;
+        // }
+        // fnModify();
+        // alert("改变后的iNum为:" + iNum);
+
+
+        // 获取标签元素属性与设置
+        // window.onload = function(){
+        //     // 根据id获取标签对象
+        //     var oInput = document.getElementById('btn');
+        //     alert(oInput);
+        //     alert(oInput.tagName);   // 获取标签名
+        //     // 获取标签属性
+        //     alert(oInput.value);     
+        //     alert(oInput.type);
+        //     // 设置标签属性
+        //     oInput.name = 'username';
+        //     // 设置样式属性
+        //     // oInput.style.background = 'red';
+        //     // 通过修改、增加class值，匹配到新的css选择器来给标签更换、添加样式
+        //     oInput.className = 'button';
+        //     }
+
+
+        // 获取、设置、修改 标签属性、内容
+        // window.onload = function(){
+        //     var oDiv1 = document.getElementById('box1');
+        //     var oDiv2 = document.getElementById('box2');
+        //     alert(oDiv1.textContent);        // 获取标签文本内容
+        //     alert(oDiv2.innerHTML);          // 获取标签包裹内容
+        //     alert(oDiv2.innerText);          // 获取标签里的文本
+        //     // 设置、修改标签内容
+        //     oDiv1.innerHTML = '<a href="http://www.hao123.com">神秘网址</a>';
+        // }
+
+
+        // 数组的定义(新建)
+        // 1. 实例化对象方式创建，类似Python的list
+        // var oArray1 = new Array(1,2,3);
+        // 2. 赋值方式直接给定一个数组
+        // var oArray2 = [3,6,9];
+        // console.log(oArray1);
+        // console.log(oArray2);
+        // ---------------------------------------
+        // 数组的操作
+        // var aList = [1,2,3,4,5];
+        // 1. 获取数组的长度(元素的个数),JavaScript的length不是函数而是方法
+        // alert('数组aList的长度为:'+ aList.length);
+        // 2. 根据下标取值、修改值,js不支持负数下标
+        // alert(aList[1]);
+        // aList[1] = 7;
+        // console.log(aList);
+        // 3. 添加和删除数据，pop只能删除最后一个，删除指定下标元素用splice
+        // aList.pop();
+        // console.log(aList);
+        // aList.push(6);
+        // console.log(aList);
+        // 4. 根据下标添加、删除数据
+        // array.splice(start,num,element1,element2,......,elementn);
+            // 1) start:   必需参数，开始删除的索引
+            // 2)  num:    可选参数，删除数组元素的个数(可为0表示不删除，如不填则会删除索引及后面的全部元素)
+            // 3) element: 可选参数，在start索引位置要插入的新元素(可多个,必须填了num参数才能生效)
+        // aList.splice(2,0,'ade','AJ');
+        // console.log(aList);
+        
+        
+        // 循环语句
+        var aArray = [1,4,7,2,5,8,3,6,9];
+        // for 循环遍历数组 
+        // for (let index = 0; index < aArray.length; index++) {
+        //     const element = aArray[index];
+        //     console.log(element);
+        // }
+        // ---------------------------------------------------
+        // while 循环遍历数组
+        // var index = 0;
+        // while (index < aArray.length) {
+        //     const element = aArray[index];
+        //     console.log(element);
+        //     index++;
+        // }
+        // ---------------------------------------------------
+        // do while循环
+        // var index = 10;
+        // do {
+        //     alert("测试是否执行");
+        //     const element = aArray[index];
+        //     console.log(element);
+        //     index++;
+        // } while (index < aArray.length);
+
+
+        // 数字类型的隐式转换
+        // var sA = '你是猪'
+        // var iB = 484
+        // alert(sA+iB)
+        // var sC = '520'
+        // var iD = 1314
+        // alert(sC+iD)
+        
+
+        // 定时器及销毁定时器
+        // function fnInfo(name) {
+        //     alert(name+'，你真帅！')
+        // }
+        // function fnStop() {
+        //     clearInterval(tid)
+        // }
+        // var tid = setInterval(fnInfo,1000,"王骁")
+        
+
+    </script>
+
+</head>
+<body>
+    <input type="button" id="btn" value="普通按钮" onclick="alert('你点我了')">
+    <input type="button" value="停止" onclick="fnStop()">
+    <div id="box1">这是标签包裹的文本内容...</div>
+    <div id="box2"><a href="http://www.baidu.com">百度一下</a></div>
+
+    
+</body>
+</html>
+
+<!-- 
+
+    JavaScript 是运行在浏览器端的脚本语言，由浏览器解释执行，简称js
+    用于设置网页行为，增加网页与用户的交互效果
+
+    JavaScript的三种使用(引用)方式
+
+    1. 行内式（主要用于事件）
+        <input type="button" name="" onclick="alerk('ok!');">
+        onclick属性，在点击后触发
+    2. 内嵌式
+        <script type="text/javascript">
+            alert('ok!');
+        </script>
+    3. 外链式
+        <script type="text/javascript" src="js/index.js"></script>
+        
+ -->
+
+ <!-- 
+
+    每条JavaScript语句应该以';'结尾
+
+    定义变量
+    JavaScript 不需要指定变量类型，它的变量类型由值决定，定义变量时需要用 var 开头，并以;(分号)结尾
+    格式: var 变量名 = 值;    也可以用一个var关键字一次定义多个变量: var iNum = 45,sTr = 'qwe',sCount = '68'
+    其他关键字:
+        使用var声明的变量，其作用域为该语句所在的函数内，且存在变量提升现象；
+        使用let声明的变量，其作用域为该语句所在的代码块内，不存在变量提升；
+        使用const声明的是常量，在后面出现的代码中不能再修改该常量的值。
+
+    数据类型
+     number 数字类型
+     string 字符串类型
+     boolean 布尔类型，true 或 false
+     undefined 变量声明未初始化，它的值就是undefined
+     null 表示空对象，如果变量初始化为null时，如果页面没有返回新的值，则变量值为null
+     object 对象类型，定义类似Python字典，访问时是以 对象.属性 访问
+
+    变量命名规则
+    1. 区分大小写
+    2. 第一个字符必须是字母、下划线(_)、或者美元符号($)
+    3. 其他字符可以是字母、下划线、美元符号或者数字
+
+    函数定义与调用
+    使用关键字 function 定义函数
+
+
+    与Python有差异的比较运算符
+     if判断句格式:   if (xx) {xxxx} else if (xx) {xxxx} else {xxxx}
+     == 比较值是否相等， === 比较值与类型是否都相等
+    ----------------------------------------------
+    逻辑运算符
+     && 相当于Python的 and      (xx && xx)
+     || 相当于Python的 or       (xx || xx)
+     ！ 相当于Python的 not        !(xxx)
+    
+
+    window.onload = 函数   页面加载完成后调用函数
+
+    属性差异
+     html 的属性大多数跟 js 写法一样但是 class 在 js 写成 className
+     属性中有横杠的改成驼峰式，如 font-size 在js中改成 fontSize
+
+  -->   
+
+  <!-- 
+
+      数组
+      数组相当于Python中的列表
+      数组的成员也是数组的数组称为 多维数组
+
+   -->
+   <!-- 
+        JavaScript的循环语句
+            for
+            while
+            do-while    无论条件是否成立，至少执行一次
+    -->
+    <!-- 
+        隐式类型转换: 字符串和数字拼接，底层自动把数字类型转换成字符串类型
+     -->
+     <!-- 
+        定时器
+        设置特定时间执行的代码
+
+        js定时器两种创建方式:
+            1. setTimeout(func[delay,param1,param2...])  指定时间后调用一次函数
+            2. setInterval(fun[delay,param1,param2...]) 每隔指定时间重复调用一次函数
+            -------------------------------------------------------------------------
+                func    定时器要执行的函数名(不用带括号)
+                delay   时间间隔，默认为0，单位毫秒
+                param   定时器执行函数的参数1，如有多个参数，继续添加
+                --------------------------------
+                调用结束后，需用下面的函数销毁定时器，定时器有返回值(序号)，用变量接收
+                cleanTimeout(定时器序号)、cleanInterval(定时器序号)
+            -------------------------------------------------------------------------  
+      -->
+
+      <!-- 
+          js脚本解密
+          把脚本函数用alert或者console打印出来，然后复制到格式化工具公式化一下即可
+       -->
